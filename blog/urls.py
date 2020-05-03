@@ -15,11 +15,12 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import blogpic
+from . import views
 
 
 urlpatterns = [
 
 
-    path('',blogpic,name='blog'),
+    path('',views.blogpic,name='blog'),
+    path('<int:blog_id>/',views.blog_detail,name='blogdetail'),
 ]

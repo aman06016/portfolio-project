@@ -51,7 +51,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="https://www.reddit.com/">Reddit </a>
+      <a class="nav-item nav-link active" href="https://www.reddit.com/">Twitter </a>
       <a class="nav-item nav-link" href="{% static 'aman_resume.pdf' %}">resume</a>
       <a class="nav-item nav-link" href="{% url 'blog' %}">blog</a>
         </div>
@@ -60,37 +60,26 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1>ALGORITHMS</h1>
-      <p class="lead text-muted">Here we will descuss about newly aadvanced algorithms</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">email me</a>
 
-      </p>
-    </div>
-  </section>
-<center><img src="{% static 'aman.jpg' %}" height=300 width=300></center>
 
-  <div class="album py-5 bg-light">
+
+  ">
     <div class="container">
 
-      <div class="row">
-        {% for i in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ i.image.url }}">
 
-              <div class="card-body">
-              <p class="card-text">{{ i.summary }}</p>
 
-            </div>
+
+        <h1><p class="text-center">{{blogdetail.title }}</p><h1>
+            <h6><p >{{blogdetail.date }}</p></h6>
+
+          <img class="img-fluid" src="{{ i.image.url }}" height=200 width=200>
+
+          <h6><p >{{blogdetail.text }}</p></h6>
+
+
           </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+
+
 
 
 

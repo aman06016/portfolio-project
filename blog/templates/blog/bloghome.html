@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -44,15 +45,15 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Aman here</a>
+  <a class="navbar-brand" href="{% url 'home'%}">Aman here</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Twitter </a>
-      <a class="nav-item nav-link" href="#">resume</a>
-      <a class="nav-item nav-link" href="#">blog</a>
+      <a class="nav-item nav-link active" href="https://www.reddit.com/">Twitter </a>
+      <a class="nav-item nav-link" href="{% static 'aman_resume.pdf' %}">resume</a>
+      <a class="nav-item nav-link" href="{% url 'blog' %}">blog</a>
         </div>
   </div>
 </nav>
@@ -77,12 +78,12 @@
 
         {% for i in blogs.all %}
 
-          <a href=#><h3><p >{{i.title }}</p><h3><a>
+          <a href="{% url 'blogdetail' i.id %}"><h3><p >{{i.title }}</p><h3><a>
             <h6><p >{{i.date }}</p></h6>
 
           <img class="img-fluid" src="{{ i.image.url }}" height=200 width=200>
 
-          <h6><p >{{i.text }}</p></h6>
+          <h6><p >{{i.summary }}</p></h6>
         {% endfor %}
 
           </div>
